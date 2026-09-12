@@ -47,6 +47,22 @@ USING gin (tsv_content);
 -- 6. Index Foreign Key for fast joins
 CREATE INDEX IF NOT EXISTS idx_child_chunks_parent_id 
 ON child_chunks (parent_id);
+
+-- 7. Create Semantic Cache Table
+CREATE TABLE IF NOT EXISTS semantic_cache (
+    id UUID PRIMARY KEY,
+    query_text TEXT NOT NULL,
+    query_vector vector(768) NOT NULL,
+    response_text TEXT NOT NULL,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 8. Create HNSW Vector Index for Semantic Cache
+CREATE INDEX IF NOT EXISTS idx_semantic_cache_vector_hnsw 
+ON semantic_cache 
+USING hnsw (query_vector vector_cosine_ops)
+WITH (m = 16, ef_construction = 64);
 """
 
 
