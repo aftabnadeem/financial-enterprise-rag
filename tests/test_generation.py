@@ -6,7 +6,7 @@ def test_generation_and_cache():
     generator = GroundedGenerator(cache_threshold=0.95)
 
     # First execution: CACHE MISS (runs retrieval + LLM synthesis)
-    query_1 = "Summarize the revenues and operating income for Sample Company"
+    query_1 = "Summarize the revenues and operating income for Alphabet"
     print("=" * 60)
     print(f"TEST 1 (Fresh Query): '{query_1}'")
     print("=" * 60)
@@ -18,7 +18,7 @@ def test_generation_and_cache():
     print(f"\n\n[Total Execution Time: {duration_1:.2f}s]\n")
 
     # Second execution: Semantically equivalent query -> EXPECT CACHE HIT
-    query_2 = "Give me a summary of Sample Company's revenue and operating income"
+    query_2 = "Give me a summary of Alphabet's revenue and operating income"
     print("=" * 60)
     print(f"TEST 2 (Semantically Equivalent): '{query_2}'")
     print("=" * 60)

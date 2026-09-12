@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What were Alphabet's primary consolidated revenue drivers and how did total revenues perform?",
+    "ground_truth": "Alphabet's revenues are primarily driven by Google Services, including Google Search & other, YouTube ads, and Google Network, alongside Google Cloud and Other Bets, demonstrating YoY revenue expansion."
+  },
+  {
+    "question": "What is the role of Google Cloud in Alphabet's financial structure?",
+    "ground_truth": "Google Cloud includes infrastructure and platform services, collaboration tools, and other enterprise services that contribute to consolidated segment revenue and operating results."
+  },
+  {
+    "question": "How does Alphabet define its operating income and operating margin?",
+    "ground_truth": "Operating income is consolidated revenues minus total costs and operating expenses, reflecting operating profitability across business segments."
+  },
+  {
+    "question": "What capital allocation strategies does Alphabet report regarding share repurchases and dividends?",
+    "ground_truth": "Alphabet allocates capital through share repurchases authorized by the board of directors and cash dividends to return value to stockholders."
+  }
+]
